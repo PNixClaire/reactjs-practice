@@ -4,4 +4,6 @@
 
 - npm create vite@latest
 
-- you can create a dedicated style sheet for each component
+- you can do external styling [global/affects all components]
+- you can create a dedicated style sheet for each component [.modules.<component-name>]
+- you can do inline styling for components that need minimal styling
