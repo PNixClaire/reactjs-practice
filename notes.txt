@@ -7,3 +7,16 @@
 - you can do external styling [global/affects all components]
 - you can create a dedicated style sheet for each component [.modules.<component-name>]
 - you can do inline styling for components that need minimal styling
+
+PROPS
+- read only properties shared between components
+- parent component can send data to a child component 
+
+PROP TYPES
+- mechanism that ensures that passed value is of correct datatype
+- when an incorrect data type is entered, it will issue a warning in the console
+example: age: PropTypes.number
+
+DEFAULT PROPS
+- default values for props in case they are not passed from the parent component
+example: name: "Guest" 
