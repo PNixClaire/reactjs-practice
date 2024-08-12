@@ -1,0 +1,7 @@
+- React is a JS library to create reusable components
+- uses JSX = JavaScript XML for html-like code
+- lightweight version of the real DOM [updated real time, no need to refresh]
+
+- npm create vite@latest
+
+- you can create a dedicated style sheet for each component
