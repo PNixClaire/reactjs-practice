@@ -1,17 +1,11 @@
-import Student from "./Student.jsx";
+import UserGreeting from "./UserGreeting.jsx";
 
 function App() {
   return (
     //student is the child and App is the parent
+    //when you change the isLoggedIn property, the display will change too
      <>
-      {/* now you can reuse the same component but with different data */}
-      <Student name="Spongebob" age={30} isStudent={true} />
-      <Student name="Patrick" age={42} isStudent={false} />
-      <Student name="Squidward" age={50} isStudent={false} />
-      <Student name="Sandy" age={27} isStudent={true} />
-
-      {/* this doesn't any props, it uses the default values instead*/}
-      <Student/>
+      <UserGreeting isLoggedIn={true} username="Nix" />
     </>
   );
 }

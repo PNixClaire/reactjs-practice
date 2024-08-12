@@ -20,3 +20,7 @@ example: age: PropTypes.number
 DEFAULT PROPS
 - default values for props in case they are not passed from the parent component
 example: name: "Guest" 
+
+CONDITIONAL RENDERING
+- control what gets rendered in the application based on certain conditions [show, hid, or change components]
+- you can use if-else, the ternary operator or store the elements in const then check for the conditions
