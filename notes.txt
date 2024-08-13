@@ -32,3 +32,23 @@ LISTS
 - each list item must have a unique id
 - you can sort the list items
 - you can make filters to render selected list items
+
+CLICK EVENT
+- interaction when user clicks on an element
+- response to clicks [pass a callback to the onClick event handler]
+- you can pass parameters on the onClick event
+- you can also have different onClick events for different conditions 
+- if you have more than one line of code for the event, use {}
+- wrap the handler in an arrow function 
+
+- you are automatically provided an event object [e] parameter and this has different properties
+- there is also an onDoubleClick event handler
+
+REACT HOOK
+- special function 
+- allows functional components to use React features without writing class components
+- you need to import React in your component but you can also use object desrtructuring to import only the necessary hooks
+
+useState() 
+- react hook 
+- allows the creation of a stateful variable and a setter function to update its value in the Virtual DOM
