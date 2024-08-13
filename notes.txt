@@ -24,3 +24,11 @@ example: name: "Guest"
 CONDITIONAL RENDERING
 - control what gets rendered in the application based on certain conditions [show, hid, or change components]
 - you can use if-else, the ternary operator or store the elements in const then check for the conditions
+
+LISTS
+- have a list 
+- convert the list items into <li/> elements 
+- each list item can have properties
+- each list item must have a unique id
+- you can sort the list items
+- you can make filters to render selected list items
