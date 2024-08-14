@@ -52,3 +52,8 @@ REACT HOOK
 useState() 
 - react hook 
 - allows the creation of a stateful variable and a setter function to update its value in the Virtual DOM
+
+onChange
+- event handler
+- used with form elements 
+- triggers a function everytime the value of the input changes

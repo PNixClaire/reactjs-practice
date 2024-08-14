@@ -3,36 +3,73 @@ import { useState } from "react";
 
 function MyComponent() {
     
-    //name is Guest by default
-    const [name, setName] = useState("Guest");
-    const [age, setAge] = useState(0);
-    const [isEmployed, setIsEmployed] = useState(false);
+    const [name, setName] = useState("");
+    const [quantity, setQuantity] = useState();
 
-    const updateName = () => {
-        //the setter will trigger a re-render of the virtual DOM so the change will be rendered immediately
-        setName("Spongebob");
+    const [comment, setComment] = useState("");
+
+    const [payment, setPayment] = useState("");
+
+    const [shipping, setShipping] = useState("Delivery");
+
+    function handleNameChange(event) {
+        setName(event.target.value);
     }
 
-    const incrementAge = () => {
-        setAge(age+1);
+    function handleQuantityChange(event) {
+        setQuantity(event.target.value);
     }
 
-    const toggleEmployedStatus = () => {
-        setIsEmployed(!isEmployed);
+    function handleCommentChange(event) {
+        setComment(event.target.value);
     }
 
-    return (<div>
-        <p>Name: {name}</p>
-        {/* but when the user clicks the button, the name will be reset */}
-        <button onClick={updateName}>Set Name</button>
+    function handlePaymentChange(event) {
+        setPayment(event.target.value);
+    }
 
-        <p>Age: {age}</p>
-        {/* everytime user clicks the button, icrement the age by 1 */}
-        <button onClick={incrementAge}>Increment Age</button>
+    function handleShippingChange(event) {
+        setShipping(event.target.value);
+    }
 
-        <p>Is Employed: {isEmployed ? "Yes" : "No"}</p>
-        <button onClick={toggleEmployedStatus}>Toggle Status</button>
-    </div>)
+    return (
+        <div>
+            {/* when you enter a name, it will update in real time */}
+            <input value={name} onChange={handleNameChange}/>
+            <p>Name: {name} </p>
+
+            <input value={quantity} onChange={handleQuantityChange} type="number" />
+            <p>Quantity: {quantity}</p>
+            
+            {/* text area */}
+            <textarea value={comment} onChange={handleCommentChange} placeholder="Enter delivery instructions" />
+            <p>Comment: {comment}</p>
+
+            <select value={payment} onChange={handlePaymentChange}>
+                <option value="">Select an option</option>
+                <option value="Visa">Visa</option>
+                <option value="Mastercard">Mastercard</option>
+                <option value="Giftcard">Giftcard</option>
+            </select>
+            <p>Payment: {payment}</p>
+
+            <label>
+                Pick up
+                <input type="radio"
+                    value="Pick up"
+                    checked={shipping === "Pick up"}
+                    onChange={handleShippingChange} />
+            </label>
+            <label>
+                Delivery
+                 <input type="radio"
+                    value="Delivery"
+                    checked={shipping === "Delivery"}
+                    onChange={handleShippingChange} />
+            </label>
+            <p>Shipping: {shipping}</p>
+        </div>
+    );
 }
 
 export default MyComponent
