@@ -1,40 +1,37 @@
 import { useState } from "react";
 
 function MyComponent() {
-    const [count, setCount] = useState(0);
+    
+    //car will be an object with these properties
+    const [car, setCar] = useState({
+        year: 2024,
+        make: "Suzuki",
+        model: "Jimny"
+    });
 
-    function increment() {
+    function handleYearChange(event) {
+        //this will add a new year property for the car and if you have two properties with the same name of different values, you will use the latest
+        //setCar({ ...car, year: event.target.value});
 
-        //this means 0 + 1 three times
-        /*
-        setCount(count + 1);
-        setCount(count + 1);
-        setCount(count + 1);
-        */
-        
-        //this updates the value of count based on its previous value
-        setCount(prevCount => prevCount + 1);
-       // setCount(prevCount => prevCount + 1);
-       // setCount(prevCount => prevCount + 1);
+        setCar(prevCar => ({...prevCar, year: event.target.value}));
+    }
 
-    };
+    function handleMakeChange(event) {
+        setCar(prevCar => ({ ...prevCar, make: event.target.value }));
+    }
 
-    function decrement() {
-        setCount(prevCount => prevCount + 1);
-    };
-
-    function reset() {
-        //no need for updater function here 
-        setCount(0);
-    };
+    function handleModelChange(event) {
+        setCar(prevCar => ({ ...prevCar, model: event.target.value }));
+    }
 
     return (
         <div>
-            <p>Count: {count}</p>
-            <button onClick={decrement}>Decrement</button>
-            <button onClick={reset}>Reset</button>
-            <button onClick={increment}>Increment</button>
-      </div>  
+            <p>Your favorite car is: {car.year} {car.make} {car.model}</p>
+
+            <input type="number" value={car.year} onChange={handleYearChange}/> <br/>
+            <input type="text" value={car.make} onChange={handleMakeChange} /> <br />
+            <input type="text" value={car.model} onChange={handleModelChange}/> <br/>
+       </div>
     );
 };
 
