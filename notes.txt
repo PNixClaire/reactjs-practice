@@ -57,3 +57,14 @@ onChange
 - event handler
 - used with form elements 
 - triggers a function everytime the value of the input changes
+
+
+UPDATER FUNCTIONS
+- function passed as an argument to setState
+- Allow for safe update based on pervious stateful
+- used with multiple state updates and asynchronous functions
+Example: setVar(prevVar => prevVar_update)
+- rename the stateful variable
+- takes the pending state to calculate the next state
+- puts the updater function in a queue then it will be called during the next render [FCFS]
+- good practice to use updater functions
