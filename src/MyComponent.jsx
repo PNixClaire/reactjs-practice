@@ -2,36 +2,40 @@ import { useState } from "react";
 
 function MyComponent() {
     
-    //car will be an object with these properties
-    const [car, setCar] = useState({
-        year: 2024,
-        make: "Suzuki",
-        model: "Jimny"
-    });
+    const [foods, setFoods] = useState([
+        "Apple",
+        "Orange",
+        "Banana"
+    ]);
 
-    function handleYearChange(event) {
-        //this will add a new year property for the car and if you have two properties with the same name of different values, you will use the latest
-        //setCar({ ...car, year: event.target.value});
+    function handleAddfood() {
+        const newFood = document.getElementById("foodInput").value; //get the input value
+        document.getElementById("foodInput").value = ""; //empty value to clear the input field after submit
 
-        setCar(prevCar => ({...prevCar, year: event.target.value}));
+        //this will add a new element to the array
+        setFoods(prevFood => [...prevFood, newFood ]);
     }
 
-    function handleMakeChange(event) {
-        setCar(prevCar => ({ ...prevCar, make: event.target.value }));
-    }
+    function handleRemoveFood(index) {
 
-    function handleModelChange(event) {
-        setCar(prevCar => ({ ...prevCar, model: event.target.value }));
+        //filter those elements whose index does not equal the selected one
+        setFoods(foods.filter((_, i) => i !== index));
     }
 
     return (
         <div>
-            <p>Your favorite car is: {car.year} {car.make} {car.model}</p>
+            <h2>List of Food</h2>
+            <ul>
+                {foods.map((food, index) =>
+                    <li key={index}
+                        onClick={() => handleRemoveFood(index)}>
+                        {food}
+                    </li>)}
+            </ul>
 
-            <input type="number" value={car.year} onChange={handleYearChange}/> <br/>
-            <input type="text" value={car.make} onChange={handleMakeChange} /> <br />
-            <input type="text" value={car.model} onChange={handleModelChange}/> <br/>
-       </div>
+            <input type="text" id="foodInput" placeholder="Enter food" />
+            <button onClick={handleAddfood}>Add Food</button>
+        </div>
     );
 };
 
