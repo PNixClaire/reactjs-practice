@@ -1,7 +1,15 @@
-import ToDoList from "./ToDoList.jsx";
+//import ToDoList from "./ToDoList.jsx";
+
+//import MyComponent from "./MyComponent.jsx";
+
+import MyComponent2 from "./MyComponent2.jsx";
+
 function App() {
   return (
-    <ToDoList/>
+    //<ToDoList/>
+    // <MyComponent/>
+    <MyComponent2/>
+
   );
 }
 

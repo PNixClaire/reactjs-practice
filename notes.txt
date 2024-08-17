@@ -68,3 +68,21 @@ Example: setVar(prevVar => prevVar_update)
 - takes the pending state to calculate the next state
 - puts the updater function in a queue then it will be called during the next render [FCFS]
 - good practice to use updater functions
+
+useEffect (function, [dependencies])
+- the second argument is optional
+- hook
+- keeps code more organized
+- you have the option to add some cleanup code
+- do some code when:
+    - the component re-renders -> useEffect(() => {})
+    - the component mount -> useEffect(() => {}, [])
+    - the state of the value changes -> useEffect(() => {}, [value])
+
+- used in event listeners
+- DOM manipulation
+- subscription [real-time updates]
+- fetching data from API 
+- clean up when component unmounts
+
+
