@@ -1,85 +1,35 @@
 body{
-    background-color: lightcoral;
-}
-.to-do-list{
-    font-family: Arial, Helvetica, sans-serif;
-    text-align: center;
-    margin-top: 100px;
-}
+    background-image: url(assets/568501.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    margin: 0;
 
-h1{
-    font-size: 4rem;
-
-}
-
-button{
-    font-size: 1.7rem;
-    font-weight: bold;
-    padding: 10px 20px;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.5s ease;
-}
-
-.add-button{
-    background-color: green;
-}
-
-.add-button{
-    background-color: darkgreen;
-}
-
-.delete-button {
-    background-color: red;
-}
-
-.delete-button {
-    background-color: darkred;
-}
-
-.move-button {
-    background-color: blue;
-}
-
-.move-button {
-    background-color: darkblue;
-}
-
-input[type="text"]{
-    font-size: 1.6rem;
-    padding: 10px;
-    border: 2px solid gray;
-    border-radius: 5px;
-    color: gray;
-}
-
-ol{
-    padding: 0;
-}
-
-li{
-    width: 50%;
-    margin-left: 23%;
-    font-size: 2rem;
-    font-weight: bold;
-    padding: 15px;
-    background-color: lightgrey;
-    margin-bottom: 10px;
-    border: 3px solid darkgray;
-    border-radius: 5px;
     display: flex;
+    justify-content: center;
+    /* take 100 percent of the height */
+    min-height: 100vh;
     align-items: center;
+
+    overflow: hidden;
 }
 
-.text{
-    /* text will take up as much space as possible */
-    flex: 1; 
+.clock-container{
+
+    backdrop-filter: blur(5px);
+
+    /* tale 100 percent of the width */
+    width: 100vw;
+    padding: 10px;
+
 }
 
-.delete-button, .move-button{
-    padding: 8px 12px;
-    font-size: 1.4rem;
-    margin-left: 10px;
+.clock{
+    color: white;
+    font-size: 6rem;
+    font-weight: bold;
+    font-family: monospace;
+    text-shadow: 3px 3px 5px black;
+    text-align: center;
 }
